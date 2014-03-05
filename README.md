@@ -28,4 +28,12 @@ spy
 <td>jetty-server</td>
 <td>8.1.8</td>
 </tr>
+<tr>
+<td>c3p0</td>
+<td>0.9.5</td>
+</tr>
+<tr>
+<td>mysql-connector-java</td>
+<td>5.0.8</td>
+</tr>
 </table>
