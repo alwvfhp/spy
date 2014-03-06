@@ -1,10 +1,13 @@
 package com.ifeng.alw.controller;
 
+import org.apache.log4j.Logger;
+
 import com.ifeng.alw.spy.Model.User;
 import com.ifeng.alw.spy.service.UserService;
 import com.jfinal.core.Controller;
 
 public class UserController extends Controller{
+	static Logger log = Logger.getLogger(UserController.class);
 	private UserService userService=new UserService();
 	//用户注册
 	public void register(){
@@ -14,7 +17,10 @@ public class UserController extends Controller{
 		User user=new User(name,pass);
 		user=userService.add(user);
 		if(null==user)this.renderJson("0","error");
-		else this.renderJson("1",user);
+		else{
+			log.info("register successful");
+			this.renderJson("1",user);
+		}
 	}
 	//jQuery查询用户名是否存在
 	public void check(){

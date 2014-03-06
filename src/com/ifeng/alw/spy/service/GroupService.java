@@ -5,8 +5,13 @@ import com.jfinal.plugin.activerecord.Record;
 
 public class GroupService extends BaseService {
 	private Group group=new Group();
-	public Group add(Group group){
-		
-		return group;
+	public Object[] add(Group group1){
+		try {
+			group1.save();
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return group1.getAttrValues();
 	}
 }

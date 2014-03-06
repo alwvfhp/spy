@@ -7,8 +7,12 @@
  */
 package com.ifeng.alw.spy;
 
+import com.ifeng.alw.controller.CardController;
+import com.ifeng.alw.controller.GdtableController;
 import com.ifeng.alw.controller.GroupController;
 import com.ifeng.alw.controller.UserController;
+import com.ifeng.alw.spy.Model.Card;
+import com.ifeng.alw.spy.Model.Gdtable;
 import com.ifeng.alw.spy.Model.Group;
 import com.ifeng.alw.spy.Model.User;
 import com.jfinal.config.Constants;
@@ -51,6 +55,8 @@ public class SpyConfig extends JFinalConfig{
 		arg0.add(acp);
 		acp.addMapping("user","uId",User.class);
 		acp.addMapping("group","gid", Group.class);
+		acp.addMapping("card","cId",Card.class);
+		acp.addMapping("gdtable","gdId",Gdtable.class);
 	}
 
 	@Override
@@ -58,5 +64,7 @@ public class SpyConfig extends JFinalConfig{
 		// TODO Auto-generated method stub
 		arg0.add("/user",UserController.class);
 		arg0.add("/group",GroupController.class);
+		arg0.add("/card",CardController.class);
+		arg0.add("/table",GdtableController.class);
 	}
 }
